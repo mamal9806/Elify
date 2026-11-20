@@ -99,7 +99,7 @@ fun ElifyEditor() {
             }
             Box(Modifier.fillMaxWidth().weight(1f).clip(RoundedCornerShape(24.dp)).background(Color.White),contentAlignment=Alignment.Center){
                 val bmp=original
-                if(bmp==null) Column(horizontalAlignment=Alignment.Center){Icon(Icons.Default.Image,color=Purple,modifier=Modifier.size(64.dp));Text("Choose a photo to begin",color=DeepPurple)}
+                if(bmp==null) Column(horizontalAlignment=Alignment.CenterHorizontally){Icon(imageVector=Icons.Default.Image,contentDescription=null,tint=Purple,modifier=Modifier.size(64.dp));Text("Choose a photo to begin",color=DeepPurple)}
                 else Image(bmp.asImageBitmap(),null,Modifier.fillMaxWidth().padding(6.dp),contentScale=ContentScale.Fit,colorFilter=if(showOriginal) null else ColorFilter.colorMatrix(matrix))
             }
             ScrollableTabRow(selectedTabIndex=cats.indexOf(category).coerceAtLeast(0),containerColor=Page,contentColor=Purple){
