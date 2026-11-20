@@ -137,7 +137,7 @@ fun ElifyEditor() {
                     else {
                         val out=Bitmap.createBitmap(src.width,src.height,Bitmap.Config.ARGB_8888)
                         val canvas=Canvas(out);val paint=Paint(Paint.ANTI_ALIAS_FLAG)
-                        paint.colorFilter=ColorMatrixColorFilter(AndroidColorMatrix(matrixFor(state).values))
+                        paint.colorFilter=ColorMatrixColorFilter(AndroidColorMatrix(matrixFor(state)))
                         canvas.drawBitmap(src,0f,0f,paint)
                         val cv=ContentValues().apply{put(MediaStore.Images.Media.DISPLAY_NAME,"Elify_"+System.currentTimeMillis()+".jpg");put(MediaStore.Images.Media.MIME_TYPE,"image/jpeg");put(MediaStore.Images.Media.RELATIVE_PATH,"Pictures/Elify")}
                         val uri=ctx.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,cv)
